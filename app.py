@@ -18,9 +18,9 @@ def fetch_IFSC_details():
     return question('What is IFSC code?').reprompt('May I please have the IFSC code?')
 
 @ask.intent("IFSCCode")
-def ifsc_details(ifsc):
-    ifsc = str(ifsc)
-    return statement("IFSC is " + ifsc)
+def ifsc_details(code):
+    #ifsc = str(ifsc)
+    return statement("IFSC is {}".format(code))
 
 port = int(os.getenv('PORT', 5000))
 app.run(debug=False, port=port, host='0.0.0.0')
