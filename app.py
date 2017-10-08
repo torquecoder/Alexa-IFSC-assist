@@ -19,6 +19,7 @@ def fetch_IFSC_details():
 
 @ask.intent("IFSCCode")
 def ifsc_details(ifsc):
+    ifsc = str(ifsc)
     return statement("IFSC is {}".format(ifsc))
 
 port = int(os.getenv('PORT', 5000))
