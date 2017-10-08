@@ -1,2 +1,2 @@
-# Alexa-IFSC-assist-
+# Alexa-IFSC-assist
 Alexa skill to query IFSC codes
