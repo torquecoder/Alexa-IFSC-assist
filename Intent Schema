@@ -1,0 +1,56 @@
+{
+  "intents": [
+    {
+      "intent": "FetchIFSCdetails"
+    },
+    {
+      "slots": [
+        {
+          "name": "bankA",
+          "type": "LETTER"
+        },
+        {
+          "name": "bankB",
+          "type": "LETTER"
+        },
+        {
+          "name": "bankC",
+          "type": "LETTER"
+        },
+        {
+          "name": "bankD",
+          "type": "LETTER"
+        },
+        {
+          "name": "bankE",
+          "type": "LETTER"
+        },
+        {
+          "name": "bankF",
+          "type": "LETTER"
+        },
+        {
+          "name": "bankG",
+          "type": "LETTER"
+        },
+        {
+          "name": "bankH",
+          "type": "LETTER"
+        },
+        {
+          "name": "bankI",
+          "type": "LETTER"
+        },
+        {
+          "name": "bankJ",
+          "type": "LETTER"
+        },
+        {
+          "name": "bankK",
+          "type": "LETTER"
+        }
+      ],
+      "intent": "IFSCCode"
+    }
+  ]
+}
