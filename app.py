@@ -7,7 +7,7 @@ from flask_ask import Ask, statement, question, session
 app = Flask(__name__)
 ask = Ask(app, "/")
 logging.getLogger("flask_ask").setLevel(logging.DEBUG)
-
+base_url = 'https://ifsc.razorpay.com/'
 
 @ask.launch
 def new_request():
@@ -19,9 +19,12 @@ def fetch_IFSC_details():
 
 @ask.intent("IFSCCode")
 def ifsc_details(bankA, bankB, bankC, bankD, bankE, bankF, bankG, bankH, bankI, bankJ, bankK):
-    #code = str(code)
     ifsc = bankA + bankB + bankC + bankD + bankE + bankF + bankG + bankH + bankI + bankJ + bankK
-    return statement("IFSC is " + ifsc)
+    url = base_url + ifsc
+    r = requests.get(url)
+    json_data = r.json()
+    return statement('The details are' + ' ' + json_data['BRANCH'] + ' ' + json_data['ADDRESS'])
+
 
 port = int(os.getenv('PORT', 5000))
 app.run(debug=False, port=port, host='0.0.0.0')
