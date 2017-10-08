@@ -23,7 +23,7 @@ def ifsc_details(bankA, bankB, bankC, bankD, bankE, bankF, bankG, bankH, bankI, 
     url = base_url + ifsc
     r = requests.get(url)
     json_data = r.json()
-    return statement('The details are' + ' ' + json_data['BRANCH'] + ' ' + json_data['ADDRESS'])
+    return statement('The details are' + ' ' + json_data['BANK'] + ' ' + json_data['BRANCH'] + ' ' + json_data['ADDRESS'])
 
 
 port = int(os.getenv('PORT', 5000))
