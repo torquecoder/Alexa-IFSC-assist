@@ -20,7 +20,8 @@ def fetch_IFSC_details():
 @ask.intent("IFSCCode")
 def ifsc_details(bankA, bankB, bankC, bankD, bankE, bankF, bankG, bankH, bankI, bankJ, bankK):
     #code = str(code)
-    return statement("IFSC is " + bankA + " " + bankB + " " + bankC + " " + bankD + " " + bankE)
+    ifsc = bankA + bankB + bankC + bankD + bankE + bankF + bankG + bankH + bankI + bankJ + bankK
+    return statement("IFSC is " + ifsc)
 
 port = int(os.getenv('PORT', 5000))
 app.run(debug=False, port=port, host='0.0.0.0')
